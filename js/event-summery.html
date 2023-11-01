@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Summery</title>
+</head>
+<body>
+    <h1>Final Dom Event Handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <p id="input-text-display">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">event handle by add onclick function</button>
+    <br>
+    <br>
+    <button id="event-listener">Handle event by addevent listener</button>
+
+
+    <script>
+        // option 1
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'can you understand what i am doing right now?';
+            // console.log('button clicked');
+        }
+
+        // option 2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlerStatus2 = document.getElementById('handler-status');
+            handlerStatus2.innerText = 'dont get surprise! It is heapning by add event listener';
+        })
+
+
+        // option 2 recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+           
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            // const p = document.getElementById('input-text-display').innerText = inputField.value;
+            const p = document.getElementById('input-text-display');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+</body>
+</html>
